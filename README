@@ -1,21 +1,37 @@
-This demo code is tested with Vagrant 1.0.2 and VirtualBox 4.1.10.
+
+Tested with Vagrant 1.5.4 and VirtualBox 4.3.10.
 
 This is a simple example of how to build a virtual test environment with Vagrant and Puppet.
 
-The setup contains two virtual machines, one database server with MySQL and one application server with Tomcat 6.
+The setup contains a virtual machine with a database server with MySQL, an Apache2 webserver and an application server with Tomcat 7.
+Beside that it includes a phpmyadmin environment. 
+Since this vm is configured only for development purposes it is strongly recommended not to use it for productive environments. 
+
+Prerequisites:
+ * Vagrant (http://www.vagrantup.com/)
+ * VirtualBox (https://www.virtualbox.org/wiki/Downloads)
+ 
+
 
 Simply check it out, chdir into the directory and then run
 
-> vagrant up
+ > vagrant up
 
-to start the two boxes.
+to start the box.
 
-You'll then have your application server at http://33.33.33.10:8080 and your database server listens on 33.33.33.11. Enjoy!
+You'll then have your application server at http://33.33.33.10:8080.
+PhpMyAdmin is available at http://33.33.33.10/phpmyadmin. (No password for root!)
+
+Database user/password: dbuser/dbuser
+Tomcat-manager: manager/manager
+
+
+Enjoy!
 
 When you're done, don't forget to stop your virtual boxes with
 
-> vagrant halt
+ > vagrant halt
 
 or completely remove them with
 
-> vagrant destroy
+ > vagrant destroy
