@@ -35,3 +35,15 @@ When you're done, don't forget to stop your virtual boxes with
 or completely remove them with
 
  > vagrant destroy
+
+
+ Problems:
+ Sometimes the VBGuestAdditions are outdated. Then you can update it by 
+ vagrant plugin install vagrant-vbguest
+
+ Afterwards ssh into your vm and ensure:
+ sudo ln -s /opt/VBoxGuestAdditions-4.3.10/lib/VBoxGuestAdditions /usr/lib/VBoxGuestAdditions
+ 
+
+ run
+ $ vagrant reload
