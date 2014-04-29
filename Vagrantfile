@@ -8,7 +8,7 @@ Vagrant::Config.run do |config|
 
   # config for the appserver box
   config.vm.define "appserver" do |app|
-    app.vm.boot_mode = :gui
+   #app.vm.boot_mode = :gui
     app.vm.network :hostonly, "33.33.33.10"
     app.vm.host_name = "appserver01.local"
     app.vm.provision :puppet do |puppet|
