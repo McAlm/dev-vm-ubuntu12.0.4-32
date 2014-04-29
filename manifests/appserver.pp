@@ -100,6 +100,15 @@ class phpmyadmin{
       require => Package["phpmyadmin"],
     }
 
+	file { "config.inc.php":
+    owner => 'root',
+    group => 'root',
+    mode => 644,
+	path =>'/etc/phpmyadmin/config.inc.php',
+    source => '/vagrant/files/config.inc.php',
+    require => Package["phpmyadmin"],
+  }
+
     exec {"enable-phpmyadmin":
       command => "sudo a2ensite phpmyadmin.conf",
       require => File["/etc/apache2/sites-available/phpmyadmin.conf"],
@@ -108,7 +117,7 @@ class phpmyadmin{
     exec { "restart-apache":
       command => "sudo /etc/init.d/apache2 restart",
       require => Exec["enable-phpmyadmin"],
-    }
+    } 
 }
 
 
