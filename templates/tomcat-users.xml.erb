@@ -20,7 +20,10 @@ limitations under the License.
 
 
 <role rolename="manager"/>
+<role rolename="manager-gui"/>
+<role rolename="manager-script"/>
+<role rolename="manager-jmx"/>
 <role rolename="admin"/>
-<user name="<%= tomcat_user %>" password="<%= tomcat_password %>" roles="manager,admin"/>
+<user name="<%= tomcat_user %>" password="<%= tomcat_password %>" roles="manager, manager-gui, manager-script, manager-jmx, admin"/>
 
 </tomcat-users>
