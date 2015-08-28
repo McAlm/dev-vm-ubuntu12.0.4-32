@@ -4,7 +4,7 @@
 Vagrant::Config.run do |config|
   
   # base box and URL where to get it if not present
-  config.vm.box = "hashicorp/precise32"
+  config.vm.box = "ubuntu/trusty64"
 
   # config for the appserver box
   config.vm.define "appserver" do |app|
